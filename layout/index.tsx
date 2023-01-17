@@ -11,7 +11,7 @@ interface Props {
 
 export default function Layout({ title, children }: PropsWithChildren<Props>) {
   return (
-    <>
+    <div className="layout bg-lightgray relative h-screen">
       <Head>
         <title>{title}</title>
         <meta
@@ -26,6 +26,6 @@ export default function Layout({ title, children }: PropsWithChildren<Props>) {
       <main>{children}</main>
       <RightSidebar />
       <Footer />
-    </>
+    </div>
   );
 }
