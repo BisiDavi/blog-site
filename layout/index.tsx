@@ -1,9 +1,10 @@
+import Head from "next/head";
+import type { PropsWithChildren } from "react";
+
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
-import Head from "next/head";
-import type { PropsWithChildren } from "react";
 
 interface Props {
   title: string;

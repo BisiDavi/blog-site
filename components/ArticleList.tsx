@@ -10,7 +10,7 @@ export default function ArticleList({ article }: Props) {
   const { url, height, width } =
     article.fields["Blog Image"][0].thumbnails.large;
   return (
-    <div className="bg-white border border-b-0 last:border-b last:rounded-b p-4">
+    <div className="bg-white border border-b-0 last:border-b last:rounded-b  p-4 px-6">
       <div className="top">
         <div className="author flex items-center space-x-2 my-4">
           <div className="icon font-bold bg-gray-900 text-white p-2 rounded-full w-10 flex items-center justify-center">
