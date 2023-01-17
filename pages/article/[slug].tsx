@@ -45,13 +45,13 @@ export async function getStaticProps(context: GetStaticPropsContext | any) {
   console.log("context", context);
   const result = await getAirtableBlogData();
 
-  const article = result.filter(
+  const articleObj = result.filter(
     (item) => toSlug(item.fields.Title) === context.params.slug
   )[0];
 
   return {
     props: {
-      article,
+      article: articleObj,
     },
   };
 }
