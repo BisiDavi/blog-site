@@ -5,9 +5,17 @@ import { getAirtableData } from "@/utils/apiRequest";
 
 export default function Home() {
   useEffect(() => {
-    getAirtableData().then((response) =>
-      console.log("response", response.data)
-    );
+    getAirtableData().then((response) => {
+      const result: any = [];
+      console.log("response", response.data);
+      response.data.records.map((item:any) => {
+        if (Object.values(item.fields).length !== 0) {
+          console.log("item", item);
+          result.push(item);
+        }
+      });
+      console.log("result", result);
+    });
   }, []);
 
   return (
