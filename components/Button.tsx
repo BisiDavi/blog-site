@@ -10,32 +10,28 @@ interface Props {
   onMouseOut?: () => void;
   iconPosition?: "left" | "right";
   disabled?: boolean;
+  iconClassName?: string;
 }
 export default function Button(props: Props) {
   const {
     text,
-    type = "button",
     className,
     onClick,
     icon,
+    iconClassName,
+    type = "button",
     iconPosition = "left",
   } = props;
 
   return (
-    <button
-      {...props}
-      className={className}
-      type={type}
-      title={text}
-      onClick={onClick}
-    >
+    <button className={className} type={type} title={text} onClick={onClick}>
       {icon && iconPosition === "left" && (
         <Image
           src={icon}
           alt="icon"
           height={50}
           width={50}
-          className="w-1/5 mr-1"
+          className={iconClassName}
         />
       )}
       {text ? text : ""}
@@ -45,7 +41,7 @@ export default function Button(props: Props) {
           alt="icon"
           height={50}
           width={50}
-          className="w-1/5 mr-1"
+          className={iconClassName}
         />
       )}
     </button>
