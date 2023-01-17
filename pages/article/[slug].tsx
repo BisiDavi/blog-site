@@ -15,7 +15,7 @@ export default function ArticlePage({ article }: Props) {
   return (
     <Layout title={article?.fields?.Title} noSidebar>
       {article && (
-        <section className="container px-20  mx-auto">
+        <section className="container px-20 pb-20  mx-auto">
           <Image
             src={article?.fields["Blog Image"][0].thumbnails.full.url}
             height={article?.fields["Blog Image"][0].thumbnails.full.height}

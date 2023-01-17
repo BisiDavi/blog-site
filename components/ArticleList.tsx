@@ -16,7 +16,7 @@ export default function ArticleList({ article }: Props) {
   const titleSlug = toSlug(article.fields.Title);
   return (
     <Link href={`/article/${titleSlug}?id=${article.id}`}>
-      <div className="bg-white border last:border-b-0  hover:bg-gray-100 p-4 px-6">
+      <div className="bg-white border last:border-b-0  hover:bg-gray-50 p-4 px-6">
         <div className="top">
           <div className="author flex items-center space-x-2 my-4">
             <div className="icon font-bold bg-gray-900 text-white p-2 rounded-full w-10 flex items-center justify-center">
@@ -47,7 +47,7 @@ export default function ArticleList({ article }: Props) {
             {article.fields.tags.map((tag) => (
               <li
                 key={tag}
-                className="border rounded-lg px-4 py-1 hover:bg-gray-100"
+                className="border rounded-lg px-4 py-1 hover:bg-gray-200"
               >
                 {tag}
               </li>
