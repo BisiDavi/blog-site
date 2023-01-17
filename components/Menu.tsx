@@ -10,9 +10,21 @@ export default function Menu() {
         iconClassName="w-1/5 mr-1"
       />
       <div className="group w-1/2 flex  justify-end space-x-4">
-        <Button icon="/moon.svg" iconClassName="w-40" />
-        <Button icon="/bell.svg" iconClassName="w-52" />
-        <Button icon="/person.svg" iconClassName="w-40" />
+        <Button
+          icon="/moon.svg"
+          iconClassName="w-24"
+          className="hover:bg-gray-100 rounded-full flex items-center p-2"
+        />
+        <Button
+          icon="/bell.svg"
+          iconClassName="w-24"
+          className="hover:bg-gray-100 rounded-full flex items-center p-2"
+        />
+        <Button
+          icon="/person.svg"
+          iconClassName="w-24"
+          className="hover:bg-opacity-80 rounded-full flex items-center p-1"
+        />
       </div>
     </nav>
   );
