@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Logo() {
   return (
-    <Link href="/">
+    <Link href="/" className="mr-10">
       <div className="logo flex items-center hover:text-blue-500">
         <Image
           src="/quill.png"
