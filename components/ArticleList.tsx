@@ -1,3 +1,4 @@
+import Markdown from "markdown-to-jsx";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,9 +28,7 @@ export default function ArticleList({ article }: Props) {
         <div className="content flex space-x-2 items-center">
           <div className="text w-1/2 items-center">
             <h2 className="text-2xl font-bold">{article.fields.Title}</h2>
-            <p className="h-40 text-wrap ellipsis my-4">
-              {article.fields.Blog.substring(0, 299)}
-            </p>
+            <Markdown>{article.fields.Blog.substring(0, 299)}</Markdown>
           </div>
           <div className="image w-1/2">
             <Image

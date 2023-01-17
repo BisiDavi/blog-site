@@ -8,9 +8,14 @@ import RightSidebar from "@/components/RightSidebar";
 
 interface Props {
   title: string;
+  noSidebar?: boolean;
 }
 
-export default function Layout({ title, children }: PropsWithChildren<Props>) {
+export default function Layout({
+  title,
+  children,
+  noSidebar = false,
+}: PropsWithChildren<Props>) {
   return (
     <div className="layout bg-lightgray relative h-screen">
       <Head>
@@ -23,9 +28,9 @@ export default function Layout({ title, children }: PropsWithChildren<Props>) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <LeftSidebar />
+      {!noSidebar && <LeftSidebar />}
       <main>{children}</main>
-      <RightSidebar />
+      {!noSidebar && <RightSidebar />}
       <Footer />
     </div>
   );
