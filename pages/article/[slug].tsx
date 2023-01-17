@@ -6,6 +6,7 @@ import toSlug from "@/utils/toSlug";
 import { getAirtableBlogData } from "@/utils/apiRequest";
 import type { articleType } from "@/types";
 import Image from "next/image";
+import ArticleMetatag from "@/components/ArticleMetatag";
 
 interface Props {
   article: articleType;
@@ -13,7 +14,8 @@ interface Props {
 
 export default function ArticlePage({ article }: Props) {
   return (
-    <Layout title={article?.fields?.Title} noSidebar>
+    <Layout title={article?.fields?.Title} noSidebar noMetatag>
+      {article && <ArticleMetatag article={article} />}
       {article && (
         <section className="container px-20 pb-20  mx-auto">
           <Image

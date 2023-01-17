@@ -9,16 +9,18 @@ import Metatag from "@/components/Metatag";
 interface Props {
   title: string;
   noSidebar?: boolean;
+  noMetatag?: boolean;
 }
 
 export default function Layout({
   title,
   children,
   noSidebar = false,
+  noMetatag = false,
 }: PropsWithChildren<Props>) {
   return (
     <div className="layout bg-lightgray relative h-screen">
-      <Metatag title={title} />
+      {!noMetatag && <Metatag title={title} />}
       <Header />
       {!noSidebar && <LeftSidebar />}
       <main>{children}</main>
