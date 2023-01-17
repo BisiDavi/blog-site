@@ -1,18 +1,9 @@
 import Layout from "@/layout";
 import { getAirtableBlogData } from "@/utils/apiRequest";
+import type { articleType } from "@/types";
 
 interface Props {
-  articles: Array<{
-    id: string;
-    fields: {
-      "Blog Image": [];
-      Author: string;
-      tags: string[];
-      Blog: string;
-      Title: string;
-    };
-    createdTime: Date;
-  }>;
+  articles: Array<articleType>;
 }
 
 export default function Home({ articles }: Props) {
