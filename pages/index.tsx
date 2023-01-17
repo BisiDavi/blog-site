@@ -1,7 +1,7 @@
 import Layout from "@/layout";
 import { getAirtableBlogData } from "@/utils/apiRequest";
-import type { articleType } from "@/types";
 import ArticleList from "@/components/ArticleList";
+import type { articleType } from "@/types";
 
 interface Props {
   articles: Array<articleType>;

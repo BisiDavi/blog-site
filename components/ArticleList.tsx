@@ -1,4 +1,5 @@
 import Image from "next/image";
+import getUserInitials from "@/utils/getUserInitials";
 import type { articleType } from "@/types";
 
 interface Props {
@@ -11,8 +12,12 @@ export default function ArticleList({ article }: Props) {
   return (
     <div className="bg-white border border-b-0 last:border-b last:rounded-b p-4">
       <div className="top">
-        <div className="icon"></div>
-        <h5 className="font-medium">{article.fields.Author}</h5>
+        <div className="author flex items-center space-x-2 my-4">
+          <div className="icon font-bold bg-gray-900 text-white p-2 rounded-full w-10 flex items-center justify-center">
+            {getUserInitials(article.fields.Author)}
+          </div>
+          <h5 className="font-medium">{article.fields.Author}</h5>
+        </div>
       </div>
       <div className="content flex space-x-2 items-center">
         <div className="text w-1/2 items-center">
